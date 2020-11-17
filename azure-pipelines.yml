@@ -51,4 +51,3 @@ steps:
 #- publish: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
 #     artifactName: 'drop'
 #  displayName: 'Upload package'
-  
