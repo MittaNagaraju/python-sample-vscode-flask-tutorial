@@ -47,8 +47,8 @@ steps:
      archiveFile: '$(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip'
      replaceExistingArchive: true
   displayName: 'Archive Files'
-    
+
 - publish: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
-     displayName: 'Upload package'
-     artifactName: 'drop'
+     artifact: 'drop'
+  displayName: 'Upload package'
   
