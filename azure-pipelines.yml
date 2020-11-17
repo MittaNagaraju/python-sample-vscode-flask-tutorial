@@ -48,10 +48,10 @@ steps:
      replaceExistingArchive: true
      verbose: # (no value); this input is optional
   displayName: 'Archive Files'
-     
+  
 - publish: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
-      artifact: drop
-  displayName: 'Upload package' 
+      artifactName:drop
+  displayName: 'Upload package'
    
 - task: AzureRmWebAppDeployment@4
   inputs:
