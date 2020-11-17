@@ -51,3 +51,12 @@ steps:
 - publish: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
      artifactName: 'drop'
   displayName: 'Upload package'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure Primary'
+    appType: 'webAppLinux'
+    WebAppName: 'Python'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    RuntimeStack: 'PYTHON|3.6'
