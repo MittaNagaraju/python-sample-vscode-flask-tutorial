@@ -48,10 +48,6 @@ steps:
      replaceExistingArchive: true
   displayName: 'Archive Files'
   
-- publish: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
-     artifact: 'drop'
-  displayName: 'Upload package'
-  
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
