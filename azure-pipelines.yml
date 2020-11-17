@@ -40,14 +40,14 @@ steps:
   displayName: 'pytest'
   
 - task: ArchiveFiles@2
-   inputs:
+  inputs:
      rootFolderOrFile: '$(Build.SourcesDirectory)'
      includeRootFolder: false
      archiveType: 'zip'
      archiveFile: '$(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip'
      replaceExistingArchive: true
      verbose: # (no value); this input is optional
-   displayName: 'Archive Files'
+  displayName: 'Archive Files'
      
 - publish: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
    displayName: 'Upload package'
