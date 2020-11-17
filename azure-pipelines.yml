@@ -44,12 +44,12 @@ steps:
      rootFolderOrFile: '$(Build.SourcesDirectory)'
      includeRootFolder: false
      archiveType: 'zip'
-     archiveFile: '$(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip'
+     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
      replaceExistingArchive: true
      verbose: # (no value); this input is optional
   displayName: 'Archive Files'
   
-- publish: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
+- publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       artifactName:drop
   displayName: 'Upload package'
    
