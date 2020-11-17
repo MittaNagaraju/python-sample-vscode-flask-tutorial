@@ -38,20 +38,21 @@ steps:
     pip install pytest pytest-azurepipelines
     pytest
   displayName: 'pytest'
-
+  
 - task: ArchiveFiles@2
-  inputs:
+   inputs:
      rootFolderOrFile: '$(Build.SourcesDirectory)'
      includeRootFolder: false
      archiveType: 'zip'
      archiveFile: '$(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip'
      replaceExistingArchive: true
-  displayName: 'Archive Files'
-  
+     verbose: # (no value); this input is optional
+   displayName: 'Archive Files'
+     
 - publish: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
-     artifactName: 'drop'
-  displayName: 'Upload package'
-  
+   displayName: 'Upload package'
+   artifact: drop
+   
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
