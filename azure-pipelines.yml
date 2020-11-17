@@ -51,7 +51,7 @@ steps:
  - publish: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
    displayName: 'Upload package'
    artifact: drop
-
+   
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
