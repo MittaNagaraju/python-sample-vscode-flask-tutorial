@@ -50,7 +50,7 @@ steps:
   displayName: 'Archive Files'
   
 - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-      artifact: drop
+    artifact:drop
   displayName: 'Upload package'
    
 - task: AzureRmWebAppDeployment@4
