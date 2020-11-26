@@ -11,13 +11,13 @@ variables:
   azureServiceConnectionId: 'fd5fe969-c626-43e8-9e02-f24642fa860a'
   
   # Web app name
-  webAppName: 'NagaSample'
+  webAppName: 'RS-12'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
   # Environment name
-  environmentName: 'NagaSample'
+  environmentName: 'RS-12'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
